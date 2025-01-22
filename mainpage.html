@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iVer's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Stalinist+One&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Montserrat:ital,wght@0,500;1,400&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script>
+            tailwind.config = {
+                theme: {
+                    screens: {
+                      'sssm': '320px',
+                      'ssm': '375px',
+                      'sm': '425px',
+                      'md': '768px',
+                      'mmd': '1024px',
+                      'lg': '1440px',
+                    },
+                    extend: {
+                      keyframes: {
+                        moveUpDown: {
+                          '0%, 100%': { transform: 'translateY(0)' },
+                          '50%': { transform: 'translateY(5px)' },
+                        },
+                      fadedown: {
+                        '0%': { opacity: '0', transform: 'translateY(-30px)', scale: '0.9' },
+                        '100%': { opacity: '1', transform: 'translateY(0px)', scale: '1' }, 
+                      },
+                      fadeup: {
+                        '0%': { opacity: '0', transform: 'translateY(30px)', scale: '0.9' },
+                        '100%': { opacity: '1', transform: 'translateY(0px)', scale: '1' },
+                      },
+                      fadeout: {
+                        '0%': { opacity: '1', transform: 'translateX(0px)' },
+                        '25%': { opacity: '0.75', transform: 'translateX(-20px)' },
+                        '50%': { opacity: '0.5', transform: 'translateX(-30px)' },
+                        '75%': { opacity: '0.25', transform: 'translateX(-40px)' },
+                        '100%': { opacity: '0' },
+                    },
+                    fadein:{
+                        '0%': { opacity: '0'},
+                        '25%': { opacity: '0.25', transform: 'translateX(30px)' },
+                        '50%': { opacity: '0.5', transform: 'translateX(20px)' },
+                        '75%': { opacity: '0.75', transform: 'translateX(10px)' },
+                        '100%': { opacity: '1', transform: 'translateX(0px)' },
+                    },
+                    fadeinmid:{
+                        '0%': { opacity: '0', transform: 'translateX(10px)' },
+                        '100%': { opacity: '1', transform: 'translateX(0px)' },
+                    },
+                    fadeoutmid:{
+                        '0%': { opacity: '0', transform: 'translateX(0px)' },
+                        '100%': { opacity: '1', transform: 'translateX(10px)' },
+                    },
+                    showmenu:{
+                      '0%': {  transform: 'translateX(0px)' },
+                      '100%': {  transform: 'translateX(-500px)' },
+                    },
+                    closemenu:{
+                      '0%': {  transform: 'translateX(-500px)' },
+                      '100%': {  transform: 'translateX(200px)' },
+                    },
+                    darkmodeon:{
+                      '0%':{transform: 'translateX(0px)'},
+                      '100%':{transform: 'translateX(25px)'},
+                    },
+                    darkmodeoff:{
+                      '0%':{transform: 'translateX(25px)'},
+                      '100%':{transform: 'translateX(0px)'},
+                    },
+                    lightmodeleft:{
+                      '0%':{transform: 'translateX(0px)'},
+                      '100%':{transform: 'translateX(85px)'},
+                    },
+                    darkmoderight:{
+                      '0%':{transform: 'translateX(85px)'},
+                      '100%':{transform: 'translateX(0px)'},
+                    },
+                  },
+                      animation: {
+                        moveUpDown: 'moveUpDown 1s infinite',
+                        fadedown: 'fadedown 0.5s 0.4s backwards',
+                        fadeup: 'fadeup 0.5s',
+                        fadeout: 'fadeout 2s',
+                        fadein: 'fadein 2s',
+                        fadeinmid: 'fadeinmid 2s',
+                        fadeoutmid: 'fadeoutmid 2s',
+                        showmenu: 'showmenu 1s forwards',
+                        closemenu: 'closemenu 1s forwards',
+                        darkmodeon: 'darkmodeon 0.5s forwards',
+                        darkmodeoff: 'darkmodeoff 0.5s forwards',
+                        lightmodeleft:  'lightmodeleft 0.5s forwards',
+                        darkmoderight: 'darkmoderight 0.5s forwards',
+                      },
+                      fontFamily: {
+                        stalinist: ['Stalinist One', 'sans-serif'],
+                        sen:['Sen', 'sans-serif'],
+                        montserrat:['Montserrat', 'sans-serif'],
+                        roboto:['Roboto', 'sans-serif'],
+                        quicksand:['Quicksand', 'sans-serif'],
+                      },
+                      colors: {
+                        'custom-black': '#262626',
+                        'custom-lightblack' : '#6f6a6a',
+                        'custom-light': '#EEEEDD',
+                      },
+                    },
+                  },
+            }
+ 
+    </script>
+    <style>
+        #scrollUpButton {
+            display: none;
+            transition: opacity 0.3s;
+        }
+        #scrollUpButton.show {
+            display: block;
+            opacity: 1;
+        }
+        body {
+            padding-top: 150px;
+            overflow-x: hidden;
+        }
+        html{
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .connectbutton::before{
+            content:'';
+            position: absolute;
+            top: 0;
+            left:0;
+            width:0;
+            height:100%;
+            background-color: #f87171;
+            transition: 0.5s;
+            z-index: -1;
+        }
+        .connectbutton:hover::before{
+            width: 100%;
+        }
+        .sendmessage::before{
+            content:'';
+            position: absolute;
+            top: 0;
+            left:0;
+            width:0%;
+            height:100%;
+            background-color: #f87171;
+            transition: 0.5s;
+            z-index: -1;
+        }
+        .sendmessage:hover::before{
+            width:100%;
+        }
+        .sendmessage{
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class=" bg-custom-black scroll-smooth">
+<header>
+        <div class="fixed inset-0 z-50 animate-showmenu sssm:hidden sssm:ml-[500px] sssm:w-[100vw] sssm:h-[100vh] sm:w-full max-w-[100%] text-white responsivenav bg-custom-black w-[100vw] h-[100vh]">            
+            <div class="flex flex-row items-center justify-between px-4 py-4 mr-4">
+            <ion-icon name="close" onclick="closemenu(this)" class="px-4 py-4 text-5xl text-white cursor-pointer closeMenu"></ion-icon>
+            <div class="darkbutton">
+                <div class="flex space-x-2">
+                <div>
+                <ion-icon name="moon-outline" class="mt-2 text-2xl text-white darkmodeicon"></ion-icon>
+                </div>
+                <div class="h-6 bg-[#9a9a9a] rounded-full w-12 mt-2">
+                    <button class="w-6 h-6 bg-white rounded-full darkmode" onclick="toggleDarkMode()"></button>
+                </div>
+            </div>
+            </div>
+        </div>
+            <div class="sssm:flex sssm:flex-col sssm:items-center sssm:justify-center sssm:text-center">
+                <ul class="mt-10 space-y-10">
+                    <li><a href="/mainpage.html"><button class="closelink" onclick="closemenu(this)">Home</button></a></li>
+                    <li><a href="#skills"><button class="closelink" onclick="closemenu(this)">Skills</button></a></li>
+                    <li><a href="#projects"><button class="closelink" onclick="closemenu(this)">Projects</button></a></li>
+                    <li><a href="#about"><button class="closelink" onclick="closemenu(this)">About</button></a></li>
+                    <li><a href="#connect"><button class="closelink" onclick="closemenu(this)">Contact</button></a></li>
+                </ul>   
+            </div>
+        </div>
+        <header class="fixed z-40 flex items-center justify-between w-full h-16 px-4 text-white top-2 headercs animate-fadedown" id="header">
+            <div class="w-full px-4 text-2xl text-white transition-all duration-200 bg-opacity-50 backdrop-blur-md responsivelogoleft rounded-3xl mmd:border-hidden mmd:hidden lg:hidden">
+                <div class="flex items-center justify-between">
+                <a href="/mainpage.html"><span class="font-stalinist headerchange">iVer</span></a>
+                <span class="mt-1 text-5xl cursor-pointer lg:hidden sssm:block md:block mmd:hidden">
+                    <ion-icon name="menu" onclick="showMenu(this)" class="text-white hamMenu"></ion-icon>
+                </span>
+            </div>
+            </div>
+            <div class="text-2xl text-white logoleft font-stalinist sssm:hidden lg:block md:hidden mmd:block">
+                <a href="/mainpage.html"><span class="headerchange">iVer</span></a>
+            </div>
+                <div class="w-auto h-16 p-2 px-4 py-4 space-x-6 text-lg text-white transition-all bg-opacity-50 sssm:hidden md:hidden mmd:block lg:block font-sen bg-custom-black navbg rounded-3xl backdrop-blur-md">
+                    <a class="invisible text-2xl text-white logomid font-stalinist headerchange" href="/">iVer</a>
+                    <a href="/mainpage.html" class="headerchange">Home</a>
+                    <a href="#skills" class="headerchange">Skills</a>
+                    <a href="#projects" class="headerchange">Projects</a>
+                    <a href="#about" class="headerchange">About</a>
+                    <a class="invisible buttonconnectmid" href="#connect"><button class="font-sen buttonconnect hover:text-white bg-[#9a9a9a] text-custom-black rounded-full text-lg w-[100px] h-[30px]" >Contact</button></a>
+                </div>
+                <div class="flex flex-row space-x-10">
+                    <div class="absolute sssm:hidden lg:block darkbutton mt-[5px] -ml-20" id='darkbutton'>
+                        <div class="flex space-x-2">
+                        <div>
+                        <ion-icon name="moon-outline" class="text-2xl text-white darkmodeicon"></ion-icon>
+                        </div>
+                        <div class="h-6 bg-[#9a9a9a] rounded-full w-12">
+                            <button class="w-6 h-6 bg-white rounded-full darkmode" onclick="toggleDarkMode()"></button>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="buttonconnectright sssm:hidden lg:block md:hidden mmd:block">
+                      <a href="#connect"><button class=" hover:text-white bg-[#9a9a9a] text-custom-black rounded-full text-lg w-[100px] h-[30px] font-sen">Contact</button></a>
+                    </div>
+                </div>
+    </header>
+<main>
+    <div class="fixed sssm:hidden lg:block mmd:block md:hidden ssm:hidden sm:hidden">
+        <ul class="flex flex-col items-center justify-center px-4 mt-20 space-y-6 text-5xl text-white cursor-pointer textchange">
+           <a href="https://github.com/i-Verson"><li><ion-icon name="logo-github" class="hover:text-red-400"></ion-icon></li></a>
+           <a href="https://www.facebook.com/xdhumol"><li><ion-icon name="logo-facebook" class="hover:text-red-400"></ion-icon></li></a>
+           <a href="https://www.instagram.com/iiverson__/"><li><ion-icon name="logo-instagram" class="hover:text-red-400"></ion-icon></li></a>
+           <a href="https://www.linkedin.com/in/ray-iverson-humol-8239a82b3/"><li><ion-icon name="logo-linkedin" class="hover:text-red-400"></ion-icon></li></a>   
+        </ul>
+    </div>
+<section class="animate-fadeup" id="home">
+ <div class="container mx-auto mt-10 min-h-screen z-[-2] min-w-screen">
+<div class="sssm:flex sssm:items-center sssm:justify-center sssm:px-4 sssm:-mt-10 lg:items-left lg:flex lg:justify-left lg:mt-20 lg:-ml-96 mmd:flex mmd:justify-left mmd:mt-20 mmd:ml-30 md:flex md:justify-left md:mt-20 md:ml-30 ">
+  <div>
+       <h1 class="text-red-400 text-[20px] font-sen text-left lg:text-[20px] mmd:text-[20px] md:text-[20px]">Hi, my name is </h1>
+    <h1 class="text-white text-[30px] font-bold font-sen textchange text-left lg:text-[60px] mmd:text-[45px] md:text-[45px]">Ray Iverson Humol.</h1>
+       <h1 class="text-white text-[30px] font-sen">
+       <span class="block font-bold text-left opacity-50 highlighted-text textchange lg:text-[60px] mmd:text-[45px] md:text-[45px]">A Web Developer.</span>
+    </h1>   
+    <p class="block text-left text-white opacity-50 font-sen textchange text-[20px] lg:text-[20px] lg:w-[500px] mmd:text-[20px] md:text-[20px] mmd:w-[450px] md:w-[350px]">I'm a beginner in web development, and an aspiring Web Developer. I built some projects that helped me to where I am today. Currently I am learning and exploring new things in web development.</p>
+    <div class="flex mt-4 justify-left w-[150px] h-[50px]">
+    <button class="relative w-[150px] h-[50px] border-2 border-red-400 text-xl text-red-400 z-1 connectbutton hover:text-white overflow-hidden cursor-pointer">Connect</button>
+</div>
+</div> 
+</div>
+</section>
+<section class="pt-[40px]" id="skills">
+    <div class="min-h-screen bg-custom-black sectionbgchange">
+        <div class="flex flex-col -space-y-56 sssm:mt-4">
+            <div class="justify-center items-center flex text-[#1D1D1D] text-[150px] lg:text-[150px] sssm:text-[75px] mmd:text-[150px] md:text-[150px] font-bold font-sen titlechange">
+               <p>Skills</p>
+            </div>
+            <div class="flex items-center justify-center">
+                <h1 class="mt-20 text-[#9A9A9A] titlechange2 text-[50px] font-bold font-sen lg:text-[50px] lg:mt-20 mmd:text-[50px] md:text-[50px] md:mt-20 mmd:mt-20 sssm:text-[25px] sssm:mt-40">Skills</h1>
+            </div>
+        </div>
+        <div class=" mt-10 lg:w-[1200px] mx-auto">
+            <div class="space-x-10 lg:space-x-10 lg:space-y-10 sssm:flex sssm:flex-wrap sssm:items-center sssm:justify-center sssm:space-y-10 sssm:space-x-0 md:space-x-10 mmd:space-x-10 ">
+            <div class="flex flex-col items-center justify-center h-64 mt-10 ml-10 shadow-2xl md:ml-10 mmd:ml-10 sssm:ml-0 w-60 bg-custom-lightblack skillsbg rounded-xl">
+                    <img src="images/allphotos/newhtml.png" alt="html" class="w-40 h-40">
+                    
+                    <h1 class="text-2xl font-bold text-white font-sen textchange">HTML</h1>
+                </div>
+                <div class="flex flex-col items-center justify-center h-64 shadow-2xl w-60 bg-custom-lightblack skillsbg rounded-xl">
+                    <img src="images/allphotos/newcss.png" alt="css" class="w-40 h-40 ">
+                    
+                    <h1 class="text-2xl font-bold text-white font-sen textchange">CSS</h1>
+                </div>
+                <div class="flex flex-col items-center justify-center h-64 shadow-2xl w-60 bg-custom-lightblack skillsbg rounded-xl">
+                    <img src="images/allphotos/newjs.png" alt="js" class="w-40 h-40">
+                    
+                    <h1 class="text-2xl font-bold text-white font-sen textchange">JavaScript</h1>
+                </div>
+                <div class="flex flex-col items-center justify-center h-64 shadow-2xl w-60 bg-custom-lightblack skillsbg rounded-xl">
+                    <img src="images/allphotos/newphp.png" alt="php" class="w-40 h-40">
+                    <h1 class="text-2xl font-bold text-white font-sen textchange">PHP</h1>
+                </div>
+                
+                    <div class="flex flex-col items-center justify-center h-64 shadow-2xl w-60 bg-custom-lightblack skillsbg rounded-xl ">
+                        <img src="images/allphotos/newmysql.png" alt="html" class="w-40 h-40">
+                        <h1 class="text-2xl font-bold text-white font-sen textchange">MySQL</h1>
+                    </div>
+                    <div class="flex flex-col items-center justify-center h-64 shadow-2xl w-60 bg-custom-lightblack skillsbg rounded-xl ">
+                        <img src="images/allphotos/newlaravel.png" alt="html">
+               
+                        <h1 class="text-2xl font-bold text-white font-sen textchange">Laravel</h1>
+                    </div>
+                    <div class="flex flex-col items-center justify-center h-64 shadow-2xl w-60 bg-custom-lightblack rounded-xl skillsbg ">
+                        <img src="images/allphotos/newtailwind.png" alt="html" class="w-40 h-40">
+                        <h1 class="text-2xl font-bold text-white font-sen textchange">Tailwind CSS</h1>
+                    </div>
+        </div>
+        </div>
+    </div>
+</section>
+<section class="pt-[40px]" id="projects">
+    <div class="min-h-screen bg-custom-black sectionbgchange">
+        <div class="flex flex-col -space-y-56 sssm:mt-4">
+            <div class=" titlechange justify-center items-center flex text-[#1D1D1D] text-[150px] font-bold font-sen lg:text-[150px] sssm:text-[75px] mmd:text-[150px] md:text-[150px]">
+               <p>Projects</p>
+            </div>
+            <div class="flex items-center justify-center">
+                <h1 class="titlechange2 mt-20 text-[#9A9A9A] text-[50px] font-bold font-sen lg:text-[50px] lg:mt-20 mmd:text-[50px] md:text-[50px] md:mt-20 mmd:mt-20 sssm:text-[25px] sssm:mt-40">Projects</h1>
+            </div>
+        </div>
+        <a href="/mindscape.html">
+        <div class="flex flex-wrap items-center justify-center px-4 mt-10 space-x-10 space-y-10 sssm:space-x-0 md:space-x-10 mmd:space-x-10 lg:space-x-10">
+            <div class="sssm:flex sssm:flex-col sm:flex sm:items-center sm:justify-center">
+            <div class="h-[370px] max-w-screen  rounded-[5px] border-2 border-custom-lightblack border-opacity-50 sm:w-[350px] projectborderchange">
+                <div class="max-w-screen h-[220px] bg-custom-lightblack bg-opacity-50 sssm:flex sssm:rounded-[2px] sssm:flex-col sssm:justify-center sssm:items-center projectbgchange">
+                <div class="py-4">
+                    <img src="images/allphotos/logo.ico" alt="" class="w-[150px] h-[110px]">
+                </div>
+                </div>
+            <div class="flex flex-col px-4 py-2 space-y-4">
+                <p class="text-xl font-bold text-white font-quicksand textchange">MindScape</p> 
+                <p class="text-[15px] text-white font-sen text-opacity-50 textchange">MindScape is a Mental Health Awareness System for the College students of the University of Perpetual Help System DALTA.</p>       
+            </div>
+        </div></a>
+            </div>
+            <a href="/webnotes.html">
+            <div class="sssm:flex sssm:flex-col sm:flex sm:items-center sm:justify-center">
+                <div class="h-[370px] max-w-screen  rounded-[5px] border-2 border-custom-lightblack border-opacity-50 sm:w-[350px] projectborderchange ">
+                    <div class="max-w-screen h-[220px] bg-custom-lightblack bg-opacity-50 sssm:flex sssm:rounded-[2px] sssm:flex-col sssm:justify-center sssm:items-center projectbgchange">
+                        <div class="flex flex-row items-center justify-center py-4">
+                    <svg class="w-[150px] h-[75px]" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 512 512"><path d="M394.894 503.83h32.68V8.17h-32.68L373.106 256z" style="fill:#ffe08f"/><path d="M264.17 503.83h130.724V8.17h-32.681z" style="fill:#ffeab2"/><path d="M362.213 8.17v397.617l-76.256 20.796L329.532 8.17z" style="fill:#fff3d4"/><path d="M329.532 8.17v396.626L264.17 503.83h-256V8.17z" style="fill:#fff"/><path d="M460.255 8.17v43.575l21.788 21.787 21.787-21.787V8.17z" style="fill:#e26142"/><path d="M460.255 51.745v43.574l21.788 21.787 21.787-21.787V51.745z" style="fill:#d8d1d0"/><path d="m482.04 503.83 21.79-65.362-21.787-21.787-21.788 21.787z" style="fill:#ffab97"/><path d="M460.255 95.319h43.574v343.149h-43.574z" style="fill:#3891e9"/><path d="M264.17 405.787v98.043l98.043-98.043z" style="fill:#ffd159"/><path d="M427.574 0a8.17 8.17 0 0 0-8.17 8.17v495.66a8.17 8.17 0 0 0 8.17 8.17 8.17 8.17 0 0 0 8.17-8.17V8.17a8.168 8.168 0 0 0-8.17-8.17zM370.383 405.787V8.17a8.17 8.17 0 0 0-8.17-8.17H8.17A8.17 8.17 0 0 0 0 8.17v495.66A8.17 8.17 0 0 0 8.17 512h256a8.173 8.173 0 0 0 5.777-2.392l98.043-98.043a8.176 8.176 0 0 0 2.393-5.778zM16.34 16.34h337.702v381.277H264.17a8.17 8.17 0 0 0-8.17 8.17v89.872H16.34V16.34zm326.149 397.617-70.148 70.148v-70.148h70.148z"/><path d="M394.894 0a8.17 8.17 0 0 0-8.17 8.17v487.49h-76.336c-4.512 0-8.17 3.657-8.17 8.17s3.658 8.17 8.17 8.17h84.506a8.17 8.17 0 0 0 8.17-8.17V8.17a8.17 8.17 0 0 0-8.17-8.17zM503.83 0h-43.574a8.17 8.17 0 0 0-8.17 8.17v430.298c0 .878.142 1.749.419 2.583l21.785 65.362a8.17 8.17 0 0 0 15.502.001l21.789-65.362a8.16 8.16 0 0 0 .419-2.584V8.17A8.17 8.17 0 0 0 503.83 0zm-35.404 430.298V103.489h27.234v326.809h-27.234zm0-370.383h27.234v27.234h-27.234V59.915zM495.66 16.34v27.234h-27.234V16.34h27.234zm-13.619 461.653-10.451-31.355h20.904l-10.453 31.355z"/></svg>                
+                </div>
+                    </div>
+                <div class="flex flex-col px-4 py-2 space-y-4">
+                    <p class="text-xl font-bold text-white font-quicksand textchange">WebNotes</p> 
+                    <p class="text-[15px] text-white font-sen text-opacity-50 textchange">WebNotes is a simple website for storing notes. </p>       
+                </div>
+            </div>
+                </div></a>
+    
+                <a href="/">
+                    <div class="sssm:flex sssm:flex-col sm:flex sm:items-center sm:justify-center">
+                        <div class="h-[370px] max-w-screen  rounded-[5px] border-2 border-custom-lightblack border-opacity-50 sm:w-[350px] projectborderchange ">
+                            <div class="max-w-screen h-[220px] bg-custom-lightblack bg-opacity-50 sssm:flex sssm:rounded-[2px] sssm:flex-col sssm:justify-center sssm:items-center projectbgchange">
+                                <div class="flex items-center justify-center py-4">
+                                    <p class="text-2xl text-white font-stalinist textchange">iVer</p>
+                        </div>
+                            </div>
+                        <div class="flex flex-col px-4 py-2 space-y-4">
+                            <p class="text-xl font-bold text-white font-quicksand textchange">Personal Portfolio</p> 
+                            <p class="text-[15px] text-white font-sen text-opacity-50 textchange">This portfolio showcases my skills, and some of the projects i've done.</p>       
+                        </div>
+                    </div>
+                        </div></a>
+        </div>
+    </div>
+</section>
+<section class="pt-[40px]" id="about">
+    <div class="min-h-screen bg-custom-black sectionbgchange">
+        <div id="wrapper" class="flex flex-col -space-y-56 sssm:mt-4">
+            <div class="titlechange justify-center items-center flex text-[#1D1D1D] text-[150px] font-bold font-sen lg:text-[150px] sssm:text-[65px] mmd:text-[150px] md:text-[150px]">
+               <p>About Me</p>
+            </div>
+            <div class="flex items-center justify-center">
+                <h1 class="titlechange2 mt-20 text-[#9A9A9A] text-[50px] font-bold font-sen lg:text-[50px] lg:mt-20 mmd:text-[50px] md:text-[50px] md:mt-20 mmd:mt-20 sssm:text-[25px] sssm:mt-40">About Me</h1>
+            </div>
+        </div>
+        <div class="sssm:flex sssm:flex-col sssm:space-y-10 sssm:justify-center sssm:items-center sssm:mt-10 md:flex md:flex-row md:space-x-10 md:mt-20 md:space-y-0 lg:mt-20 lg:space-y-0">
+            <div class="relative">
+                <img src="images/allphotos/imageprof.jpeg" class="relative z-10 sssm:w-[250px] sssm:h-[250px] border-2 md:w-[250px] md:h-[250px] lg:w-[350px] mmd:w-[350px] mmd:h-[350px] lg:h-[350px] borderchange">
+                <div class="absolute z-0 lg:w-[350px] lg:h-[350px] border-2 lg:-mt-80 lg:-ml-12 sssm:w-[250px] sssm:h-[250px] sssm:-mt-56 sssm:ml-6 borderchange mmd:w-[350px] mmd:h-[350px] mmd:-mt-80 mmd:-ml-12 md:w-[250px] md:h-[250px]"></div>
+            </div>
+            <div class="md:w-[350px] md:h-[350px] mmd:w-[400px] sssm:w-[350px] lg:w-[500px] lg:h-[350px] sssm:h-[500px] sssm:px-6">
+                <p class="text-5xl font-bold text-white font-sen md:text-4xl sssm:text-center md:text-left lg:text-left sssm:text-3xl textchange">Hello!</p>
+                <p class="text-5xl font-bold text-white font-sen md:text-4xl sssm:text-center md:text-left lg:text-left sssm:text-3xl textchange">I'm Ray Iverson.</p>
+                <p class="text-xl text-[#9A9A9A] font-sen text-center md:text-left textchange sssm:text-left">I am a fresh graduate with no working experience related to web development, but I love coding especially front-end development. At first I never really see myself enjoying programming, but being able to build 
+                    a website from scratch really gets me excited and eager to learn more things that I don't know. As of now I am upskilling and learning new things especially in web development, I am bulding projects that can help me grow as a web developer. </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pt-[40px]" id="connect">
+    <div class="min-h-screen bg-custom-black sectionbgchange">
+        <div class="flex flex-col -space-y-56">
+            <div class="titlechange justify-center items-center flex text-[#1D1D1D] text-[150px] font-bold font-sen min-w-screen lg:text-[150px] sssm:text-[75px] mmd:text-[150px] md:text-[150px]">
+               <p>Connect</p>
+            </div>
+            <div class="flex items-center justify-center">
+                <h1 class="titlechange2 mt-20 text-[#9A9A9A] text-[50px] font-bold font-sen lg:text-[50px] lg:mt-20 mmd:text-[50px] md:text-[50px] md:mt-20 mmd:mt-20 sssm:text-[25px] sssm:mt-40">Connect</h1>
+            </div>
+        </div>
+        <div class="flex items-center justify-center mt-10 space-x-20">
+        <div class="flex items-center justify-center w-[400px] h-[300px] mt-10">
+           <form action="" class="space-y-5 sssm:flex sssm:flex-col sssm:items-center sssm:justify-center">
+           <div class= "flex flex-row items-center justify-center space-x-10 lg:flex lg:flex-row lg:space-x-10 lg:space-y-0 mmd:flex mmd:flex-row mmd:space-x-10 mmd:space-y-0 md:flex md:flex-row md:space-x-10 md:space-y-0 sssm:flex sssm:flex-col sssm:items-center sssm:justify-center sssm:space-x-0 sssm:space-y-4">
+            <div class="flex flex-col space-y-4">
+            <label class="flex text-left text-white opacity-50 text-md textchange">Your name</label>
+            <input type="text" placeholder="Enter your name" required class="border-b-2 border-gray-400 w-[350px] h-[40px] bg-transparent focus:outline-none focus:border-red-400 text-white sssm:w-[250px] lg:w-[350px] textchange"></div>
+            <div class="flex flex-col space-y-4">
+            <label class="flex text-left text-white opacity-50 textchange text-md">Your email address</label>
+            <input type="email" placeholder="Enter your email address" required class="border-b-2 border-gray-400 w-[350px] h-[40px] bg-transparent focus:outline-none focus:border-red-400 text-white sssm:w-[250px] lg:w-[350px] textchange"></div></div>
+            <div class="flex flex-col space-y-4">
+            <label class="flex text-left text-white opacity-50 textchange text-md">Your message</label>
+            <textarea placeholder="Hi, we need your help in building a website for our company." required class="border-b-2 border-gray-400 w-[400px] h-[50px] bg-transparent focus:outline-none focus:border-red-400 text-white sssm:w-[250px] lg:w-[740px] mmd:w-[540px] md:w-[540px] textchange"></textarea></div>
+            <div class="flex mt-4 w-[400px] h-[40px] sssm:items-center sssm:justify-center ">
+            <button class="relative w-[400px] h-[40px] border-2 border-red-400 text-xl text-red-400 px-auto py-auto sendmessage  hover:text-white overflow-hidden cursor-pointer sssm:w-[250px]">Send Message</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+</section>
+</main>
+    <footer>
+        <div class="flex flex-row bg-[#1D1D1D] sssm:flex sssm:flex-col sssm:items-center sssm:justify-center lg:flex lg:flex-col mmd:flex mmd:flex-col">
+            <div class="flex flex-col -space-y-10 sssm:-space-y-2 lg:-space-y-10">
+            <div>
+                <p class="ml-2 text-2xl text-white sssm:text-lg sssm:ml-0 lg:text-2xl lg:ml-3 mmd:text-2xl mmd:ml-3">Want your ideas to become a reality?</p>
+            </div>
+           
+            <div class="text-[150px] text-[#9A9A9A] font-bold font-sen sssm:text-[45px] lg:text-[150px] mmd:text-[130px]">
+                <h2>Let's Connect</h2>
+            </div>
+        </div>
+           <div class="flex flex-row items-center justify-center sssm:flex sssm:flex-row sssm:space-x-4 lg:hidden mmd:hidden">
+            <a href="https://github.com/i-Verson"><ion-icon name="logo-github" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+            <a href="https://www.facebook.com/xdhumol"><ion-icon name="logo-facebook" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+            <a href="https://www.instagram.com/iiverson__/"><ion-icon name="logo-instagram" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/ray-iverson-humol-8239a82b3/"><ion-icon name="logo-linkedin" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+            </div> 
+            <div>
+                <p class="text-[#9a9a9a] text-[25px] sssm:text-[15px] lg:text-[25px] mmd:text-[25px]">&copy;All rights reserved.</p>
+            </div> 
+        </div>
+    </footer>
+</body>
+<div class="absolute">
+    <div>
+        <a id="scrollUpButton" href="#" class="fixed animate-bounce p-4 text-white bg-[#9A9A9A] lg:rounded-2xl right-10 bottom-10 sssm:bottom-5 sssm:right-5 sssm:rounded-2xl"><ion-icon class="lg:text-2xl sssm:text-xl" name="chevron-up-outline"></ion-icon></a>
+    </div>
+</div>
+<script>
+    window.addEventListener('scroll', function() {
+    var scrollUpButton = document.getElementById('scrollUpButton');
+    if (window.scrollY > 30) {
+        scrollUpButton.classList.add('show');
+    } else {
+        scrollUpButton.classList.remove('show');
+    }
+});
+window.addEventListener('scroll', function(){
+    var header = document.getElementById('header');
+    var logoleft = document.querySelector('.logoleft');
+    var buttonconnectright = document.querySelector('.buttonconnectright');
+    var buttonconnectmid = document.querySelector('.buttonconnectmid');
+    var logomid = document.querySelector('.logomid');
+    var navbg = document.querySelector('.navbg');
+    var responsivelogoleft = document.querySelector('.responsivelogoleft');
+    var darkbutton = document.getElementById('darkbutton');
+    var darkmodeButtons = document.querySelectorAll('.darkmode');
+
+
+    if(window.scrollY > 30){
+        navbg.classList.add('bg-custom-lightblack');    
+        /*Left Side Logo*/
+        logoleft.classList.add('invisible', 'animate-fadeout','duration-200');
+        /*Right Side Connect Button*/
+        buttonconnectright.classList.add( 'animate-fadein','invisible','duration-200');
+        darkbutton.classList.add('invisible');
+        /*Middle Logo*/
+        buttonconnectmid.classList.remove('invisible');
+        buttonconnectmid.classList.add('visible','animate-fadeinmid','duration-200');
+        /*Middle Connect Button*/
+        logomid.classList.remove('invisible');
+        logomid.classList.add('visible','animate-fadeoutmid','duration-200');
+        /*responsive navbar*/
+        responsivelogoleft.classList.add('bg-custom-lightblack');
+
+    }else{
+        /*Left Side Logo*/
+        logoleft.classList.remove('invisible','animate-fadeout');
+        logoleft.classList.add('visible');
+        /*Right Side Connect Button*/
+        buttonconnectright.classList.remove('invisible','animate-fadein');  
+        buttonconnectright.classList.add('visible');
+        darkbutton.classList.remove('invisible');
+        darkbutton.classList.add('visible');
+        /*navbar background*/
+        navbg.classList.remove('bg-custom-lightblack');
+        /*Middle Logo*/
+        buttonconnectmid.classList.remove('visible','animate-fadeinmid','duration-200');
+        buttonconnectmid.classList.add('invisible');
+        /*Middle Connect Button*/
+        logomid.classList.remove('visible','animate-fadeoutmid','duration-200');
+        logomid.classList.add('invisible');
+        /*responsive navbar*/
+        responsivelogoleft.classList.remove('bg-custom-lightblack');
+
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+function showMenu() {
+    const hamMenu = document.querySelector('.hamMenu');
+    const offScreenMenu = document.querySelector('.responsivenav');
+    const scrollUpButton = document.getElementById('scrollUpButton');
+    const body = document.querySelector('body');
+
+    hamMenu.addEventListener('click', function() {
+        offScreenMenu.classList.remove('sssm:hidden');
+        offScreenMenu.classList.add('transition-all', 'sssm:block', 'animate-showmenu');
+        scrollUpButton.classList.remove('show');
+        body.classList.add('overflow-hidden');
+    });
+}
+
+function closeMenu(e) {
+    const offScreenMenu = document.querySelector('.responsivenav');
+    const closeMenuButton = document.querySelector('.closeMenu');
+    const scrollUpButton = document.getElementById('scrollUpButton');
+    const closeLinks = document.querySelectorAll('.closelink');
+
+    function closeMenuAction() {
+        offScreenMenu.classList.remove('animate-showmenu');
+        offScreenMenu.classList.add('animate-closemenu');
+        setTimeout(() => {
+            offScreenMenu.classList.remove('sssm:block');
+            offScreenMenu.classList.add('sssm:hidden');
+        
+            offScreenMenu.classList.remove('animate-closemenu');
+        }, 1000); 
+    }
+
+    closeMenuButton.addEventListener('click', closeMenuAction);
+
+    closeLinks.forEach(function(cl) {
+        cl.addEventListener('click', closeMenuAction);
+    });
+}
+
+showMenu();
+closeMenu();
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    function toggleDarkMode() {
+        var darkmodeButtons = document.querySelectorAll('.darkmode');
+        var body = document.querySelector('body');
+        var darkmodeIcon = document.querySelectorAll('.darkmodeicon');
+        var textchange = document.querySelectorAll('.textchange');
+        var borderchange = document.querySelectorAll('.borderchange');
+        var headerchange = document.querySelectorAll('.headerchange');
+        var navbg = document.querySelector('.navbg');
+        var sectionbgchange = document.querySelectorAll('.sectionbgchange');
+        var titlechange = document.querySelectorAll('.titlechange');
+        var titlechange2 = document.querySelectorAll('.titlechange2');
+        var hamMenu = document.querySelector('.hamMenu');
+        var responsivenav = document.querySelector('.responsivenav');
+        var closeMenu = document.querySelector('.closeMenu');
+        var projectbgchange = document.querySelectorAll('.projectbgchange');
+        var projectborderchange = document.querySelectorAll('.projectborderchange');
+        var skillbgchange = document.querySelectorAll('.skillsbg');
+
+
+        darkmodeButtons.forEach(function(darkmode) {
+            darkmode.addEventListener('click', function() {
+                if (darkmode.classList.contains('darkmodeon')) {
+                    darkmode.classList.remove('animate-darkmodeon');
+                    darkmode.classList.add('animate-darkmodeoff');
+                    darkmode.classList.add('bg-white');
+                    darkmode.classList.remove('bg-black');
+
+                    body.classList.add('bg-custom-black');
+                    body.classList.remove('bg-[#FFFFFF]');
+
+                    darkmodeIcon.forEach(function(di) {
+                    di.name = 'moon-outline';
+                    di.classList.remove('text-black');
+                    di.classList.add('text-white');
+                    di.classList.remove('animate-lightmodeleft');
+                    di.classList.add('animate-darkmoderight');
+
+                    });
+
+                    setTimeout(() => {
+                        darkmode.classList.remove('darkmodeon');
+                        darkmode.classList.remove('animate-darkmodeoff');
+                    }, 1000);
+
+                    borderchange.forEach(function(bc) {
+                        bc.classList.add('border-custom-lightblack');
+                        bc.classList.remove('border-black');
+                    });
+
+                    projectbgchange.forEach(function(pbc) {
+                        pbc.classList.add('bg-custom-lightblack');
+                        pbc.classList.add('bg-opacity-50');
+                       
+                        pbc.classList.remove('bg-[#dcedfa]');
+                    });
+
+                    projectborderchange.forEach(function(pbc) {
+                        pbc.classList.add('border-custom-lightblack');
+                        pbc.classList.remove('border-[#dcedfa]');
+                    });
+
+                    skillbgchange.forEach(function(sb) {
+                        sb.classList.add('bg-custom-lightblack');
+                        sb.classList.remove('bg-[#dcedfa]');
+                    });
+
+                    textchange.forEach(function(tc) {
+                        tc.classList.remove('text-black');
+                        tc.classList.add('text-white');
+                    });
+
+                    headerchange.forEach(function(hc) { 
+                        hc.classList.remove('text-black');
+                        hc.classList.add('text-white');
+                    });
+
+                    navbg.classList.remove('bg-[#FFFFFF]');
+                    navbg.classList.add('bg-custom-black');
+
+                    sectionbgchange.forEach(function(sbc) {
+                        sbc.classList.remove('bg-[#FFFFFF]');
+                        sbc.classList.add('bg-custom-black');
+                    });
+
+                    titlechange.forEach(function(tc) {
+                        tc.classList.remove('text-[#9A9A9A]');
+                        tc.classList.add('text-[#1D1D1D]');
+                    });
+
+                    titlechange2.forEach(function(tc) {
+                        tc.classList.remove('text-[#1D1D1D]');
+                        tc.classList.add('text-[#9A9A9A]');   
+                    });
+
+                    hamMenu.classList.remove('text-black');
+                    hamMenu.classList.add('text-white');    
+
+               
+                    responsivenav.classList.remove('bg-[#FFFFFF]');
+                    responsivenav.classList.add('bg-custom-black');
+                    responsivenav.classList.remove('text-black');
+                    responsivenav.classList.add('text-white');
+
+                    closeMenu.classList.remove('text-black');
+                    closeMenu.classList.add('text-white');
+            
+    
+                } else {
+                    darkmode.classList.add('darkmodeon');
+                    darkmode.classList.add('animate-darkmodeon');
+                    darkmode.classList.remove('bg-white');
+                    darkmode.classList.add('bg-black');
+
+                    darkmodeIcon.forEach(function(di) {
+                        di.name = 'sunny-outline';
+                        di.classList.remove('text-white');
+                        di.classList.add('text-black');
+                        di.classList.add('animate-lightmodeleft');
+                    });
+
+                    body.classList.add('bg-[#FFFFFF]');
+                    body.classList.remove('bg-custom-black');
+
+                    textchange.forEach(function(tc) {
+                        tc.classList.remove('text-white');
+                        tc.classList.add('text-black');
+                    });
+
+                    borderchange.forEach(function(bc) {
+                        bc.classList.add('border-black');
+                        bc.classList.remove('border-custom-lightblack');
+                    });  
+
+                    projectbgchange.forEach(function(pbc) {
+                        pbc.classList.remove('bg-custom-lightblack');
+                        pbc.classList.remove('bg-opacity-50');
+                        pbc.classList.add('bg-[#dcedfa]');
+                    });
+
+                    projectborderchange.forEach(function(pbc) {
+                        pbc.classList.remove('border-custom-lightblack');
+                        pbc.classList.add('border-[#dcedfa]');
+                    });
+
+                    skillbgchange.forEach(function(sb) {
+                        sb.classList.remove('bg-custom-lightblack');
+                        sb.classList.add('bg-[#dcedfa]');
+                    });
+
+                    headerchange.forEach(function(hc) {
+                        hc.classList.remove('text-white');
+                        hc.classList.add('text-black');
+                    });
+
+                    navbg.classList.remove('bg-custom-black');
+                    navbg.classList.add('bg-[#FFFFFF]');
+            
+
+                    sectionbgchange.forEach(function(sbc) {
+                        sbc.classList.remove('bg-custom-black');
+                        sbc.classList.add('bg-[#FFFFFF]');
+                    });
+
+                    titlechange.forEach(function(tc) {
+                        tc.classList.add('text-[#9A9A9A]');
+                        tc.classList.remove('text-[#1D1D1D]');
+                    });
+
+                    titlechange2.forEach(function(tc) {
+                        tc.classList.add('text-[#1D1D1D]');
+                        tc.classList.remove('text-[#9A9A9A]');
+                    });
+
+                    hamMenu.classList.remove('text-white');
+                    hamMenu.classList.add('text-black');
+
+                    
+                    responsivenav.classList.add('bg-[#F4F4F5]');
+                    responsivenav.classList.remove('bg-custom-black');
+                    responsivenav.classList.add('text-black');
+                    responsivenav.classList.remove('text-white');
+                    
+                    closeMenu.classList.add('text-black');
+                    closeMenu.classList.remove('text-white');
+                }
+            });
+        });
+    }
+    toggleDarkMode();
+});
+</script>
+</html>

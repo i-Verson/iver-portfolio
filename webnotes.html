@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebNotes</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Stalinist+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Stalinist+One&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Montserrat:ital,wght@0,500;1,400&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                  'sssm': '320px',
+                  'ssm': '375px',
+                  'sm': '425px',
+                  'md': '768px',
+                  'mmd': '1024px',
+                  'lg': '1440px',
+                },
+                extend: {
+                  keyframes: {
+                    moveUpDown: {
+                      '0%, 100%': { transform: 'translateY(0)' },
+                      '50%': { transform: 'translateY(5px)' },
+                    },
+                  fadedown: {
+                    '0%': { opacity: '0', transform: 'translateY(-30px)', scale: '0.9' },
+                    '100%': { opacity: '1', transform: 'translateY(0px)', scale: '1' }, 
+                  },
+                  fadeup: {
+                    '0%': { opacity: '0', transform: 'translateY(30px)', scale: '0.9' },
+                    '100%': { opacity: '1', transform: 'translateY(0px)', scale: '1' },
+                  },
+                  fadeout: {
+                    '0%': { opacity: '1', transform: 'translateX(0px)' },
+                    '25%': { opacity: '0.75', transform: 'translateX(-20px)' },
+                    '50%': { opacity: '0.5', transform: 'translateX(-30px)' },
+                    '75%': { opacity: '0.25', transform: 'translateX(-40px)' },
+                    '100%': { opacity: '0' },
+                },
+                fadein:{
+                    '0%': { opacity: '0'},
+                    '25%': { opacity: '0.25', transform: 'translateX(30px)' },
+                    '50%': { opacity: '0.5', transform: 'translateX(20px)' },
+                    '75%': { opacity: '0.75', transform: 'translateX(10px)' },
+                    '100%': { opacity: '1', transform: 'translateX(0px)' },
+                },
+                fadeinmid:{
+                    '0%': { opacity: '0', transform: 'translateX(10px)' },
+                    '100%': { opacity: '1', transform: 'translateX(0px)' },
+                },
+                fadeoutmid:{
+                    '0%': { opacity: '0', transform: 'translateX(0px)' },
+                    '100%': { opacity: '1', transform: 'translateX(10px)' },
+                },
+                showmenu:{
+                  '0%': {  transform: 'translateX(0px)' },
+                  '100%': {  transform: 'translateX(-500px)' },
+                },
+                closemenu:{
+                  '0%': {  transform: 'translateX(-500px)' },
+                  '100%': {  transform: 'translateX(200px)' },
+                },
+                darkmodeon:{
+                  '0%':{transform: 'translateX(0px)'},
+                  '100%':{transform: 'translateX(25px)'},
+                },
+                darkmodeoff:{
+                  '0%':{transform: 'translateX(25px)'},
+                  '100%':{transform: 'translateX(0px)'},
+                },
+                lightmodeleft:{
+                  '0%':{transform: 'translateX(0px)'},
+                  '100%':{transform: 'translateX(85px)'},
+                },
+                darkmoderight:{
+                  '0%':{transform: 'translateX(85px)'},
+                  '100%':{transform: 'translateX(0px)'},
+                },
+              },
+                  animation: {
+                    moveUpDown: 'moveUpDown 1s infinite',
+                    fadedown: 'fadedown 0.5s 0.4s backwards',
+                    fadeup: 'fadeup 0.5s',
+                    fadeout: 'fadeout 2s',
+                    fadein: 'fadein 2s',
+                    fadeinmid: 'fadeinmid 2s',
+                    fadeoutmid: 'fadeoutmid 2s',
+                    showmenu: 'showmenu 1s forwards',
+                    closemenu: 'closemenu 1s forwards',
+                    darkmodeon: 'darkmodeon 0.5s forwards',
+                    darkmodeoff: 'darkmodeoff 0.5s forwards',
+                    lightmodeleft:  'lightmodeleft 0.5s forwards',
+                    darkmoderight: 'darkmoderight 0.5s forwards',
+                  },
+                  fontFamily: {
+                    stalinist: ['Stalinist One', 'sans-serif'],
+                    sen:['Sen', 'sans-serif'],
+                    montserrat:['Montserrat', 'sans-serif'],
+                    roboto:['Roboto', 'sans-serif'],
+                    quicksand:['Quicksand', 'sans-serif'],
+                  },
+                  colors: {
+                    'custom-black': '#262626',
+                    'custom-lightblack' : '#6f6a6a',
+                    'custom-light': '#EEEEDD',
+                  },
+                },
+              },
+        }
+
+</script>
+</head>
+<body class="bg-custom-black scroll-smooth">
+    <header>
+        <div class="fixed inset-0 z-50 animate-showmenu sssm:hidden sssm:ml-[500px] sssm:w-[100vw] sssm:h-[100vh] sm:w-full max-w-[100%] text-white responsivenav bg-custom-black w-[100vw] h-[100vh]">            
+            <div class="flex flex-row items-center justify-between px-4 py-4 mr-4">
+            <ion-icon name="close" onclick="closemenu(this)" class="px-4 py-4 text-5xl text-white cursor-pointer closeMenu"></ion-icon>
+            <div class="darkbutton">
+                <div class="flex space-x-2">
+                <div>
+                <ion-icon name="moon-outline" class="mt-2 text-2xl text-white darkmodeicon"></ion-icon>
+                </div>
+                <div class="h-6 bg-[#9a9a9a] rounded-full w-12 mt-2">
+                    <button class="w-6 h-6 bg-white rounded-full darkmode" onclick="toggleDarkMode()"></button>
+                </div>
+            </div>
+            </div>
+        </div>
+            <div class="sssm:flex sssm:flex-col sssm:items-center sssm:justify-center sssm:text-center">
+                <ul class="mt-10 space-y-10">
+                    <li><a href="/mainpage.html"><button class="closelink" onclick="closemenu(this)">Home</button></a></li>
+                    <li><a href="/mainpage.html#skills"><button class="closelink" onclick="closemenu(this)">Skills</button></a></li>
+                    <li><a href="/mainpage.html#projects"><button class="closelink" onclick="closemenu(this)">Projects</button></a></li>
+                    <li><a href="/mainpage.html#about"><button class="closelink" onclick="closemenu(this)">About</button></a></li>
+                    <li><a href="/mainpage.html#connect"><button class="closelink" onclick="closemenu(this)">Contact</button></a></li>
+                </ul>   
+            </div>
+        </div>
+        <header class="fixed z-40 flex items-center justify-between w-full h-16 px-4 text-white top-2 headercs animate-fadedown" id="header">
+            <div class="w-full px-4 text-2xl text-white transition-all duration-200 bg-opacity-50 backdrop-blur-md responsivelogoleft rounded-3xl mmd:border-hidden mmd:hidden lg:hidden">
+                <div class="flex items-center justify-between">
+                <a href="/mainpage.html"><span class="font-stalinist headerchange">iVer</span></a>
+                <span class="mt-1 text-5xl cursor-pointer lg:hidden sssm:block md:block mmd:hidden">
+                    <ion-icon name="menu" onclick="showMenu(this)" class="text-white hamMenu"></ion-icon>
+                </span>
+            </div>
+            </div>
+            <div class="text-2xl text-white logoleft font-stalinist sssm:hidden lg:block md:hidden mmd:block">
+                <a href="/mainpage.html"><span class="headerchange">iVer</span></a>
+            </div>
+                <div class="w-auto h-16 p-2 px-4 py-4 space-x-6 text-lg text-white transition-all bg-opacity-50 sssm:hidden md:hidden mmd:block lg:block font-sen bg-custom-black navbg rounded-3xl backdrop-blur-md">
+                    <a class="invisible text-2xl text-white logomid font-stalinist headerchange" href="/">iVer</a>
+                    <a href="/mainpage.html" class="headerchange">Home</a>
+                    <a href="/mainpage.html#skills" class="headerchange">Skills</a>
+                    <a href="/mainpage.html#projects" class="headerchange">Projects</a>
+                    <a href="/mainpage.html#about" class="headerchange">About</a>
+                    <a class="invisible buttonconnectmid" href="/mainpage.html/#connect"><button class="font-sen buttonconnect hover:text-white bg-[#9a9a9a] text-custom-black rounded-full text-lg w-[100px] h-[30px]" >Contact</button></a>
+                </div>
+                <div class="flex flex-row space-x-10">
+                    <div class="absolute sssm:hidden lg:block darkbutton mt-[5px] -ml-20" id='darkbutton'>
+                        <div class="flex space-x-2">
+                        <div>
+                        <ion-icon name="moon-outline" class="text-2xl text-white darkmodeicon"></ion-icon>
+                        </div>
+                        <div class="h-6 bg-[#9a9a9a] rounded-full w-12">
+                            <button class="w-6 h-6 bg-white rounded-full darkmode" onclick="toggleDarkMode()"></button>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="buttonconnectright sssm:hidden lg:block md:hidden mmd:block">
+                      <a href="/mainpage.html#connect"><button class=" hover:text-white bg-[#9a9a9a] text-custom-black rounded-full text-lg w-[100px] h-[30px] font-sen">Contact</button></a>
+                    </div>
+                </div>
+    </header>
+<div class="flex items-center justify-center sssm:mt-20">
+    <h1 class="text-2xl font-bold text-white font-roboto textchange">WebNotes</h1>
+</div>
+<div class="sssm:flex sssm:flex-col sssm:items-center sssm:justify-center sssm:mt-10 sssm:space-y-10 sssm:py-10">
+    <div class="sssm:w-[300px] shadow-2xl sssm:px-4 sssm:h-[200px] md:w-[500px] md:h-[300px] mmd:w-[700px] mmd:h-[400px] lg:w-[900px] lg:h-[500px]">
+        <img id="image1" class="w-[100%] h-[100%] " src="images/webnotesphotos/webnotes1.png" alt="">
+        <img id="image2" class="w-[100%] h-[100%]  hidden" src="images/webnotesphotos/webnotes-0.png" alt="">
+        <img id="image3" class="w-[100%] h-[100%]  hidden" src="images/webnotesphotos/webnotes-2.png" alt="">
+        <img id="image4" class="w-[100%] h-[100%]  hidden" src="images/webnotesphotos/webnotes-3.png" alt="">
+        <img id="image5" class="w-[100%] h-[100%]  hidden" src="images/webnotesphotos/webnotes-4.png" alt="">
+        <img id="image6" class="w-[100%] h-[100%]  hidden" src="images/webnotesphotos/webnotes-5.png" alt="">
+        <img id="image7" class="w-[100%] h-[100%]  hidden" src="images/webnotesphotos/webnotes-6.png" alt="">
+        <img id="image8" class="w-[100%] h-[100%]  hidden" src="images/webnotesphotos/webnotes-7.png" alt="">
+    </div>
+    <div class="flex flex-row items-center justify-center mt-10 space-x-4"> 
+        <button id="previous" class="w-10 h-10 text-center bg-white rounded-full hover:bg-custom-lightblack hover:text-white"><ion-icon name="chevron-back-outline"></ion-icon></button>
+        <button id="next" class= "w-10 h-10 text-center bg-white rounded-full hover:bg-custom-lightblack hover:text-white"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+        </div>
+    <div class="text-white text-[20px] opacity-50 px-4 py-4 textchange lg:w-[800px] mmd:w-[600px] md:w-[400px]">
+        <p>WebNotes is a web application that allows users to create, edit, and delete notes. It is built using Laravel TALL stack. The application also uses Tailwind CSS for styling.</p>
+        </p>
+    </div>
+</div>
+
+<script>
+        
+    window.addEventListener('scroll', function() {
+    var scrollUpButton = document.getElementById('scrollUpButton');
+    if (window.scrollY > 30) {
+        scrollUpButton.classList.add('show');
+    } else {
+        scrollUpButton.classList.remove('show');
+    }
+});
+window.addEventListener('scroll', function(){
+    var header = document.getElementById('header');
+    var logoleft = document.querySelector('.logoleft');
+    var buttonconnectright = document.querySelector('.buttonconnectright');
+    var buttonconnectmid = document.querySelector('.buttonconnectmid');
+    var logomid = document.querySelector('.logomid');
+    var navbg = document.querySelector('.navbg');
+    var responsivelogoleft = document.querySelector('.responsivelogoleft');
+    var darkbutton = document.getElementById('darkbutton');
+    var darkmodebuttons = document.querySelectorAll('.darkmode');
+    
+    if(window.scrollY > 30){
+        navbg.classList.add('bg-custom-lightblack');
+        /*Left Side Logo*/
+        logoleft.classList.add('invisible', 'animate-fadeout','duration-200');
+        /*Right Side Connect Button*/
+        buttonconnectright.classList.add( 'animate-fadein','invisible','duration-200');
+        darkbutton.classList.add('invisible');
+        /*Middle Logo*/
+        buttonconnectmid.classList.remove('invisible');
+        buttonconnectmid.classList.add('visible','animate-fadeinmid','duration-200');
+        /*Middle Connect Button*/
+        logomid.classList.remove('invisible');
+        logomid.classList.add('visible','animate-fadeoutmid','duration-200');
+        /*responsive navbar*/
+        responsivelogoleft.classList.add('bg-custom-lightblack');
+
+    }else{
+        navbg.classList.remove('bg-custom-lightblack');
+        /*Left Side Logo*/
+        logoleft.classList.remove('invisible','animate-fadeout');
+        logoleft.classList.add('visible');
+        /*Right Side Connect Button*/
+        buttonconnectright.classList.remove('invisible','animate-fadein');  
+        buttonconnectright.classList.add('visible');
+        darkbutton.classList.remove('invisible');
+        darkbutton.classList.add('visible');
+        /*navbar background*/
+        navbg.classList.remove('bg-custom-lightblack');
+        /*Middle Logo*/
+        buttonconnectmid.classList.remove('visible','animate-fadeinmid','duration-200');
+        buttonconnectmid.classList.add('invisible');
+        /*Middle Connect Button*/
+        logomid.classList.remove('visible','animate-fadeoutmid','duration-200');
+        logomid.classList.add('invisible');
+        /*responsive navbar*/
+        responsivelogoleft.classList.remove('bg-custom-lightblack');
+
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+function showMenu() {
+    const hamMenu = document.querySelector('.hamMenu');
+    const offScreenMenu = document.querySelector('.responsivenav');
+    const scrollUpButton = document.getElementById('scrollUpButton');
+    const body = document.querySelector('body');
+
+    hamMenu.addEventListener('click', function() {
+        offScreenMenu.classList.remove('sssm:hidden');
+        offScreenMenu.classList.add('transition-all', 'sssm:block', 'animate-showmenu');
+        scrollUpButton.classList.remove('show');
+        body.classList.add('overflow-hidden');
+    });
+}
+
+function closeMenu(e) {
+    const offScreenMenu = document.querySelector('.responsivenav');
+    const closeMenuButton = document.querySelector('.closeMenu');
+    const scrollUpButton = document.getElementById('scrollUpButton');
+    const closeLinks = document.querySelectorAll('.closelink');
+
+    function closeMenuAction() {
+        offScreenMenu.classList.remove('animate-showmenu');
+        offScreenMenu.classList.add('animate-closemenu');
+        setTimeout(() => {
+            offScreenMenu.classList.remove('sssm:block');
+            offScreenMenu.classList.add('sssm:hidden');
+        
+            offScreenMenu.classList.remove('animate-closemenu');
+        }, 1000); 
+    }
+
+    closeMenuButton.addEventListener('click', closeMenuAction);
+
+    closeLinks.forEach(function(cl) {
+        cl.addEventListener('click', closeMenuAction);
+    });
+}
+
+showMenu();
+closeMenu();
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    function toggleDarkMode() {
+        var darkmodeButtons = document.querySelectorAll('.darkmode');
+        var body = document.querySelector('body');
+        var darkmodeIcon = document.querySelectorAll('.darkmodeicon');
+        var textchange = document.querySelectorAll('.textchange');
+        var borderchange = document.querySelectorAll('.borderchange');
+        var headerchange = document.querySelectorAll('.headerchange');
+        var navbg = document.querySelector('.navbg');
+        var sectionbgchange = document.querySelectorAll('.sectionbgchange');
+        var titlechange = document.querySelectorAll('.titlechange');
+        var titlechange2 = document.querySelectorAll('.titlechange2');
+        var hamMenu = document.querySelector('.hamMenu');
+        var responsivenav = document.querySelector('.responsivenav');
+        var closeMenu = document.querySelector('.closeMenu');
+        var projectbgchange = document.querySelectorAll('.projectbgchange');
+        var projectborderchange = document.querySelectorAll('.projectborderchange');
+
+        darkmodeButtons.forEach(function(darkmode) {
+            darkmode.addEventListener('click', function() {
+                if (darkmode.classList.contains('darkmodeon')) {
+                    darkmode.classList.remove('animate-darkmodeon');
+                    darkmode.classList.add('animate-darkmodeoff');
+                    darkmode.classList.add('bg-white');
+                    darkmode.classList.remove('bg-black');
+
+                    body.classList.add('bg-custom-black');
+                    body.classList.remove('bg-[#FFFFFF]');
+
+                    darkmodeIcon.forEach(function(di) {
+                    di.name = 'moon-outline';
+                    di.classList.remove('text-black');
+                    di.classList.add('text-white');
+                    di.classList.remove('animate-lightmodeleft');
+                    di.classList.add('animate-darkmoderight');
+
+                    });
+
+                    setTimeout(() => {
+                        darkmode.classList.remove('darkmodeon');
+                        darkmode.classList.remove('animate-darkmodeoff');
+                    }, 1000);
+
+                    borderchange.forEach(function(bc) {
+                        bc.classList.add('border-custom-lightblack');
+                        bc.classList.remove('border-black');
+                    });
+
+                    projectbgchange.forEach(function(pbc) {
+                        pbc.classList.add('bg-custom-lightblack');
+                        pbc.classList.remove('bg-[#dcedfa]');
+                    });
+
+                    projectborderchange.forEach(function(pbc) {
+                        pbc.classList.add('border-custom-lightblack');
+                        pbc.classList.remove('border-[#dcedfa]');
+                    });
+
+                    textchange.forEach(function(tc) {
+                        tc.classList.remove('text-black');
+                        tc.classList.add('text-white');
+                    });
+
+                    headerchange.forEach(function(hc) { 
+                        hc.classList.remove('text-black');
+                        hc.classList.add('text-white');
+                    });
+
+                    navbg.classList.add('bg-custom-black');
+                    navbg.classList.remove('bg-[#FFFFFF]');
+
+                    if(window.scrollY > 0){
+                        navbg.classList.remove('bg-slate-400');
+                        navbg.classList.add('bg-slate-400');
+                    }
+
+
+                    sectionbgchange.forEach(function(sbc) {
+                        sbc.classList.remove('bg-[#FFFFFF]');
+                        sbc.classList.add('bg-custom-black');
+                    });
+
+                    titlechange.forEach(function(tc) {
+                        tc.classList.remove('text-[#9A9A9A]');
+                        tc.classList.add('text-[#1D1D1D]');
+                    });
+
+                    titlechange2.forEach(function(tc) {
+                        tc.classList.remove('text-[#1D1D1D]');
+                        tc.classList.add('text-[#9A9A9A]');   
+                    });
+
+                    hamMenu.classList.remove('text-black');
+                    hamMenu.classList.add('text-white');    
+
+               
+                    responsivenav.classList.remove('bg-[#FFFFFF]');
+                    responsivenav.classList.add('bg-custom-black');
+                    responsivenav.classList.remove('text-black');
+                    responsivenav.classList.add('text-white');
+
+                    closeMenu.classList.remove('text-black');
+                    closeMenu.classList.add('text-white');
+            
+    
+                } else {
+                    darkmode.classList.add('darkmodeon');
+                    darkmode.classList.add('animate-darkmodeon');
+                    darkmode.classList.remove('bg-white');
+                    darkmode.classList.add('bg-black');
+
+                    darkmodeIcon.forEach(function(di) {
+                        di.name = 'sunny-outline';
+                        di.classList.remove('text-white');
+                        di.classList.add('text-black');
+                        di.classList.add('animate-lightmodeleft');
+                    });
+
+                    body.classList.add('bg-[#FFFFFF]');
+                    body.classList.remove('bg-custom-black');
+
+                    textchange.forEach(function(tc) {
+                        tc.classList.remove('text-white');
+                        tc.classList.add('text-black');
+                    });
+
+                    borderchange.forEach(function(bc) {
+                        bc.classList.add('border-black');
+                        bc.classList.remove('border-custom-lightblack');
+                    });  
+
+                    projectbgchange.forEach(function(pbc) {
+                        pbc.classList.remove('bg-custom-lightblack');
+                        pbc.classList.add('bg-[#dcedfa]');
+                    });
+
+                    projectborderchange.forEach(function(pbc) {
+                        pbc.classList.remove('border-custom-lightblack');
+                        pbc.classList.add('border-[#dcedfa]');
+                    });
+
+                    headerchange.forEach(function(hc) {
+                        hc.classList.remove('text-white');
+                        hc.classList.add('text-black');
+                    });
+
+                    navbg.classList.remove('bg-custom-black');
+                    navbg.classList.add('bg-[#FFFFFF]');
+
+                    if(window.scrollY > 30){
+                        navbg.classList.remove('bg-[#FFFFFF]');
+                        navbg.classList.add('bg-slate-400');
+                    }
+
+                    sectionbgchange.forEach(function(sbc) {
+                        sbc.classList.remove('bg-custom-black');
+                        sbc.classList.add('bg-[#FFFFFF]');
+                    });
+
+                    titlechange.forEach(function(tc) {
+                        tc.classList.add('text-[#9A9A9A]');
+                        tc.classList.remove('text-[#1D1D1D]');
+                    });
+
+                    titlechange2.forEach(function(tc) {
+                        tc.classList.add('text-[#1D1D1D]');
+                        tc.classList.remove('text-[#9A9A9A]');
+                    });
+
+                    hamMenu.classList.remove('text-white');
+                    hamMenu.classList.add('text-black');
+
+                    
+                    responsivenav.classList.add('bg-[#F4F4F5]');
+                    responsivenav.classList.remove('bg-custom-black');
+                    responsivenav.classList.add('text-black');
+                    responsivenav.classList.remove('text-white');
+                    
+                    closeMenu.classList.add('text-black');
+                    closeMenu.classList.remove('text-white');
+                }
+            });
+        });
+    }
+    toggleDarkMode();
+});
+    
+        window.addEventListener('scroll', function() {
+            var scrollUpButton = document.getElementById('scrollUpButton');
+            if (window.scrollY > 100) {
+                scrollUpButton.classList.add('show');
+            } else {
+                scrollUpButton.classList.remove('show');
+            }
+        });
+
+  
+            const image1 = document.getElementById('image1');
+            const image2 = document.getElementById('image2');
+            const image3 = document.getElementById('image3');
+            const image4 = document.getElementById('image4');
+            const image5 = document.getElementById('image5');
+            const image6 = document.getElementById('image6');
+            const image7 = document.getElementById('image7');
+            const image8 = document.getElementById('image8');
+            const image9 = document.getElementById('image9');
+            const image10 = document.getElementById('image10');
+
+           document.getElementById('next').addEventListener('click', function(){
+            const images = [image1, image2, image3, image4, image5, image6, image7, image8];
+            let currentIndex = images.findIndex(image => !image.classList.contains('hidden'));  
+
+            if (currentIndex !== -1) {
+                images[currentIndex].classList.add('hidden');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.remove('hidden');
+            }
+           });
+    
+    document.getElementById('previous').addEventListener('click', function() {
+    const images = [image1, image2, image3, image4, image5, image6, image7, image8];
+    let currentIndex = images.findIndex(image => !image.classList.contains('hidden'));
+
+    if (currentIndex !== -1) {
+        images[currentIndex].classList.add('hidden');
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        images[currentIndex].classList.remove('hidden');
+    }
+});
+    </script>
+    <footer>
+        <div class="flex flex-row bg-[#1D1D1D] sssm:flex sssm:flex-col sssm:items-center sssm:justify-center lg:flex lg:flex-col mmd:flex mmd:flex-col mt-10">
+            <div class="flex flex-col -space-y-10 sssm:-space-y-2 lg:-space-y-10">
+            <div>
+                <p class="ml-2 text-2xl text-white sssm:text-lg sssm:ml-0 lg:text-2xl lg:ml-3 mmd:text-2xl mmd:ml-3">Want your ideas to become a reality?</p>
+            </div>
+           
+            <div class="text-[150px] text-[#9A9A9A] font-bold font-sen sssm:text-[45px] lg:text-[150px] mmd:text-[130px]">
+                <h2>Let's Connect</h2>
+            </div>
+        </div>
+           <div class="flex flex-row items-center justify-center sssm:flex sssm:flex-row sssm:space-x-4 lg:hidden mmd:hidden">
+            <a href=""><ion-icon name="logo-github" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+            <a href="https://www.facebook.com/xdhumol"><ion-icon name="logo-facebook" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+            <a href="https://www.instagram.com/iiverson__/"><ion-icon name="logo-instagram" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/ray-iverson-humol-8239a82b3/"><ion-icon name="logo-linkedin" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+            </div> 
+            <div>
+                <p class="text-[#9a9a9a] text-[25px] sssm:text-[15px] lg:text-[25px] mmd:text-[25px]">&copy;All rights reserved.</p>
+            </div> 
+        </div>
+    </footer>
+</body>
+</html>
