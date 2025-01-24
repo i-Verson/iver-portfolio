@@ -114,7 +114,7 @@
                       },
                       colors: {
                         'custom-black': '#262626',
-                        'custom-lightblack' : '#6f6a6a',
+                        'custom-lightblack' : '#6f6A6A',
                         'custom-light': '#EEEEDD',
                       },
                     },
@@ -174,7 +174,7 @@
 </head>
 <body class=" bg-custom-black scroll-smooth">
 <header>
-        <div class="fixed inset-0 z-50 animate-showmenu sssm:hidden sssm:ml-[500px] sssm:w-[100vw] sssm:h-[100vh] sm:w-full max-w-[100%] text-white responsivenav bg-custom-black w-[100vw] h-[100vh]">            
+        <div class="fixed inset-0 z-50 animate-showmenu sssm:hidden sssm:ml-[500px] sssm:w-[100vw] sssm:h-[100vh] sm:w-full max-w-[100%] text-white responsivenav sssm:bg-custom-black w-[100vw] h-[100vh]">            
             <div class="flex flex-row items-center justify-between px-4 py-4 mr-4">
             <ion-icon name="close" onclick="closemenu(this)" class="px-4 py-4 text-5xl text-white cursor-pointer closeMenu"></ion-icon>
             <div class="darkbutton">
@@ -235,7 +235,7 @@
                 </div>
     </header>
 <main>
-    <div class="fixed sssm:hidden lg:block mmd:block md:hidden ssm:hidden sm:hidden">
+    <div class="fixed sssm:hidden lg:block mmd:block md:hidden ssm:hidden sm:hidden sociallinks">
         <ul class="flex flex-col items-center justify-center px-4 mt-20 space-y-6 text-5xl text-white cursor-pointer textchange">
            <a href="https://github.com/i-Verson"><li><ion-icon name="logo-github" class="hover:text-red-400"></ion-icon></li></a>
            <a href="https://www.facebook.com/xdhumol"><li><ion-icon name="logo-facebook" class="hover:text-red-400"></ion-icon></li></a>
@@ -254,7 +254,7 @@
     </h1>   
     <p class="block text-left text-white opacity-50 font-sen textchange text-[20px] lg:text-[20px] lg:w-[500px] mmd:text-[20px] md:text-[20px] mmd:w-[450px] md:w-[350px]">I'm a beginner in web development, and an aspiring Web Developer. I built some projects that helped me to where I am today. Currently I am learning and exploring new things in web development.</p>
     <div class="flex mt-4 justify-left w-[150px] h-[50px]">
-    <button class="relative w-[150px] h-[50px] border-2 border-red-400 text-xl text-red-400 z-1 connectbutton hover:text-white overflow-hidden cursor-pointer">Connect</button>
+   <a href="#connect"><button class="relative w-[150px] h-[50px] border-2 border-red-400 text-xl text-red-400 z-1 connectbutton hover:text-white overflow-hidden cursor-pointer">Connect</button></a>
 </div>
 </div> 
 </div>
@@ -422,25 +422,29 @@
 </section>
 </main>
     <footer>
-        <div class="flex flex-row bg-[#1D1D1D] sssm:flex sssm:flex-col sssm:items-center sssm:justify-center lg:flex lg:flex-col mmd:flex mmd:flex-col">
-            <div class="flex flex-col -space-y-10 sssm:-space-y-2 lg:-space-y-10">
-            <div>
+        <div class="flex flex-row bg-[#1D1D1D] sssm:flex sssm:flex-col sssm:items-center sssm:justify-center lg:w-full lg:flex lg:flex-col mmd:flex mmd:flex-col">
+            <div class="flex flex-col w-full -space-y-10 sssm:-space-y-2 lg:-space-y-10">
+            <div class="lg:flex lg:justify-center lg:items-center mmd:flex mmd:justify-center mmd:items-center sssm:items-center sssm:flex sssm:justify-center">
                 <p class="ml-2 text-2xl text-white sssm:text-lg sssm:ml-0 lg:text-2xl lg:ml-3 mmd:text-2xl mmd:ml-3">Want your ideas to become a reality?</p>
             </div>
-           
-            <div class="text-[150px] text-[#9A9A9A] font-bold font-sen sssm:text-[45px] lg:text-[150px] mmd:text-[130px]">
+           <div class="lg:flex lg:flex-row sssm:flex-col sssm:flex lg:items-center lg:justify-center md:flex md:items-center md:justify-center mmd:flex mmd:items-center mmd:justify-center">
+            <div class="text-[150px] text-[#9A9A9A] font-bold font-sen sssm:text-[45px] lg:text-[150px] mmd:justify-center mmd:flex md:flex md:items-center md:justify-center mmd:items-center mmd:text-[130px] sssm:flex sssm:items-center sssm:justify-center">
                 <h2>Let's Connect</h2>
             </div>
+            <div class="lg:flex lg:flex-col-reverse mmd:flex mmd:flex-col-reverse  sssm:flex sssm:flex-col-reverse sssm:items-center sssm:justify-center">
+                <div>
+                    <p class="text-[#9a9a9a] text-[25px] sssm:text-[15px] lg:text-[25px] mmd:text-[25px]">&copy;All rights reserved.</p>
+                </div> 
+               <div class="flex flex-row items-center justify-center sssm:flex sssm:flex-row sssm:space-x-4 ">
+                <a href="https://github.com/i-Verson"><ion-icon name="logo-github" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+                <a href="https://www.facebook.com/xdhumol"><ion-icon name="logo-facebook" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+                <a href="https://www.instagram.com/iiverson__/"><ion-icon name="logo-instagram" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+                <a href="https://www.linkedin.com/in/ray-iverson-humol-8239a82b3/"><ion-icon name="logo-linkedin" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
+                </div> 
+                </div>
+            </div>
+
         </div>
-           <div class="flex flex-row items-center justify-center sssm:flex sssm:flex-row sssm:space-x-4 lg:hidden mmd:hidden">
-            <a href="https://github.com/i-Verson"><ion-icon name="logo-github" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
-            <a href="https://www.facebook.com/xdhumol"><ion-icon name="logo-facebook" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
-            <a href="https://www.instagram.com/iiverson__/"><ion-icon name="logo-instagram" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
-            <a href="https://www.linkedin.com/in/ray-iverson-humol-8239a82b3/"><ion-icon name="logo-linkedin" class="text-white hover:text-red-400 md:text-4xl sssm:text-2xl"></ion-icon></a>
-            </div> 
-            <div>
-                <p class="text-[#9a9a9a] text-[25px] sssm:text-[15px] lg:text-[25px] mmd:text-[25px]">&copy;All rights reserved.</p>
-            </div> 
         </div>
     </footer>
 </body>
@@ -468,10 +472,22 @@ window.addEventListener('scroll', function(){
     var responsivelogoleft = document.querySelector('.responsivelogoleft');
     var darkbutton = document.getElementById('darkbutton');
     var darkmodeButtons = document.querySelectorAll('.darkmode');
+    var sociallinks = document.querySelector('.sociallinks');
+    var sociallinks2 = document.querySelector('.sociallinks2');
 
-
+  
     if(window.scrollY > 30){
-        navbg.classList.add('bg-custom-lightblack');    
+
+    darkmodeButtons.forEach(function(darkmode) {
+    if(darkmode.classList.contains('darkmodeon')){
+        navbg.classList.add('bg-slate-400');
+        navbg.classList.remove('bg-custom-lightblack');
+    }else{
+        navbg.classList.add('bg-custom-lightblack');
+        navbg.classList.remove('bg-custom-black');
+    }
+});
+
         /*Left Side Logo*/
         logoleft.classList.add('invisible', 'animate-fadeout','duration-200');
         /*Right Side Connect Button*/
@@ -496,7 +512,16 @@ window.addEventListener('scroll', function(){
         darkbutton.classList.remove('invisible');
         darkbutton.classList.add('visible');
         /*navbar background*/
-        navbg.classList.remove('bg-custom-lightblack');
+
+        darkmodeButtons.forEach(function(darkmode) {
+            if(darkmode.classList.contains('darkmodeon')){
+                navbg.classList.remove('bg-slate-400');
+            }else{
+                navbg.classList.remove('bg-custom-lightblack');
+                navbg.classList.remove('bg-slate-400');
+  
+            }
+        });
         /*Middle Logo*/
         buttonconnectmid.classList.remove('visible','animate-fadeinmid','duration-200');
         buttonconnectmid.classList.add('invisible');
@@ -506,6 +531,18 @@ window.addEventListener('scroll', function(){
         /*responsive navbar*/
         responsivelogoleft.classList.remove('bg-custom-lightblack');
 
+    }
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        sociallinks.classList.remove('lg:block');
+        sociallinks.classList.add('lg:hidden');
+        sociallinks.classList.remove('mmd:block');
+        sociallinks.classList.add('mmd:hidden');
+    
+    }else{
+        sociallinks.classList.remove('lg:hidden');
+        sociallinks.classList.add('lg:block');
+        sociallinks.classList.remove('mmd:hidden');
+        sociallinks.classList.add('mmd:block');
     }
 });
 document.addEventListener('DOMContentLoaded', function() {
@@ -587,9 +624,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     di.name = 'moon-outline';
                     di.classList.remove('text-black');
                     di.classList.add('text-white');
-                    di.classList.remove('animate-lightmodeleft');
-                    di.classList.add('animate-darkmoderight');
-
                     });
 
                     setTimeout(() => {
@@ -651,8 +685,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     hamMenu.classList.add('text-white');    
 
                
-                    responsivenav.classList.remove('bg-[#FFFFFF]');
-                    responsivenav.classList.add('bg-custom-black');
+                    responsivenav.classList.remove('sssm:bg-[#F4F4F4]');
+                    responsivenav.classList.add('sssm:bg-custom-black');
                     responsivenav.classList.remove('text-black');
                     responsivenav.classList.add('text-white');
 
@@ -670,7 +704,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         di.name = 'sunny-outline';
                         di.classList.remove('text-white');
                         di.classList.add('text-black');
-                        di.classList.add('animate-lightmodeleft');
+               
                     });
 
                     body.classList.add('bg-[#FFFFFF]');
@@ -709,7 +743,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     navbg.classList.remove('bg-custom-black');
                     navbg.classList.add('bg-[#FFFFFF]');
-            
+                    
+
 
                     sectionbgchange.forEach(function(sbc) {
                         sbc.classList.remove('bg-custom-black');
@@ -729,9 +764,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     hamMenu.classList.remove('text-white');
                     hamMenu.classList.add('text-black');
 
-                    
-                    responsivenav.classList.add('bg-[#F4F4F5]');
-                    responsivenav.classList.remove('bg-custom-black');
+
+                    responsivenav.classList.remove('sssm:bg-custom-black');
+                    responsivenav.classList.add('sssm:bg-[#F4F4F4]');
                     responsivenav.classList.add('text-black');
                     responsivenav.classList.remove('text-white');
                     
